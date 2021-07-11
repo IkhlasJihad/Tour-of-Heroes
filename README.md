@@ -1,3 +1,4 @@
-# angular12-tour-of-heroes
+# Tour of Heroes
+Application that helps a staffing agency manage its stable of heroes.
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular12-tour-of-heroes)
+It's built follwing Tour of Heroes tutorial Angular team. [Link](https://angular.io/tutorial)
