@@ -33,7 +33,20 @@ export class HeroService {
       this.handleError(`getHero id=${id}`)
     );
   }
-
+  // GET: search for a given terms
+  searchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap(x =>
+        x.length
+          ? this.log(`heroes matching "${term}" found`)
+          : this.log(`no heroes matching "${term}"`)
+      ),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    );
+  }
   // PUT: update hero on the server
   updateHero(hero: Hero) {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
