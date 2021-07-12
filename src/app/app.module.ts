@@ -9,10 +9,9 @@ import { HeroDetailsComponent } from '../hero-details/hero-details.component';
 import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
 import { MessageComponent } from '../message/message.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { CommonModule } from '@angular/common';
 import { InMemoryDataService } from './in-memory-data.service';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HeroSearchComponent } from '../hero-search/hero-search.component';
@@ -30,9 +29,7 @@ import { HeroSearchComponent } from '../hero-search/hero-search.component';
   ],
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailsComponent,
-    DashboardComponent,
+    routingComponents,
     MessageComponent,
     HeroSearchComponent
   ],
